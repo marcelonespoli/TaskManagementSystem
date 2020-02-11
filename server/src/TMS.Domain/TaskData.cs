@@ -8,14 +8,16 @@ namespace TMS.Domain
 {
     public class TaskData : Entity<TaskData>
     {
-        public TaskData(Guid id, string name, string description, DateTime? startDate, DateTime? finishDate, int state)
+        public TaskData(Guid id, string name, string description, DateTime? startDate, DateTime? finishDate, States state)
         {
             Id = id;
             Name = name;
             Description = description;
             StartDate = startDate;
             FinishDate = finishDate;
-            State = state;
+            State = (int)state;
+
+            Subtasks = new List<Subtask>();
         }
 
         public string Name { get; private set; }

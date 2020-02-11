@@ -19,7 +19,7 @@ namespace TMS.Domain
         public string Name { get; private set; }
         public string Description { get; private set; }
         public int State { get; private set; }
-        public Guid TaskId { get; set; }
+        public Guid TaskId { get; private set; }
 
 
         // EF Property Navegation
