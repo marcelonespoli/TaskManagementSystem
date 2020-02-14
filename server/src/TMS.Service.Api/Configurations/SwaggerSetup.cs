@@ -18,10 +18,8 @@ namespace TMS.Service.Api.Configurations
                 {
                     Version = "v1",
                     Title = "Task Management",
-                    Description = "Task Management System",
-                    License = new OpenApiLicense() { Name = "MIT", Url = new Uri("https://github.com/EduardoPires/EquinoxProject/blob/master/LICENSE") }
+                    Description = "Task Management System"
                 });
-
 
             });
         }

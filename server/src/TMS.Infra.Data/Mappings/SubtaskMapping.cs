@@ -24,8 +24,7 @@ namespace TMS.Infra.Data.Mappings
 
             builder.HasOne(e => e.Task)
                 .WithMany(c => c.Subtasks)
-                .HasForeignKey(e => e.TaskId)
-                .IsRequired(false); ;
+                .HasForeignKey(e => e.TaskId);
         }
     }
 }

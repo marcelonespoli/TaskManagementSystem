@@ -15,15 +15,14 @@ namespace TMS.Infra.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.1")
+                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("TMS.Domain.Subtask", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Description")
                         .HasColumnType("varchar(max)");
@@ -32,11 +31,9 @@ namespace TMS.Infra.Data.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(250)");
 
-                    b.Property<int>("State")
-                        .HasColumnType("int");
+                    b.Property<int>("State");
 
-                    b.Property<Guid>("TaskId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<Guid>("TaskId");
 
                     b.HasKey("Id");
 
@@ -48,24 +45,20 @@ namespace TMS.Infra.Data.Migrations
             modelBuilder.Entity("TMS.Domain.TaskData", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Description")
                         .HasColumnType("varchar(max)");
 
-                    b.Property<DateTime?>("FinishDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateTime?>("FinishDate");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("varchar(200)");
 
-                    b.Property<DateTime?>("StartDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateTime?>("StartDate");
 
-                    b.Property<int>("State")
-                        .HasColumnType("int");
+                    b.Property<int>("State");
 
                     b.HasKey("Id");
 
@@ -76,7 +69,8 @@ namespace TMS.Infra.Data.Migrations
                 {
                     b.HasOne("TMS.Domain.TaskData", "Task")
                         .WithMany("Subtasks")
-                        .HasForeignKey("TaskId");
+                        .HasForeignKey("TaskId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

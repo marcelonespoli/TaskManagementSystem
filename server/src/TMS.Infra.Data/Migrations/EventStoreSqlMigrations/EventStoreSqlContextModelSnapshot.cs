@@ -15,29 +15,25 @@ namespace TMS.Infra.Data.Migrations.EventStoreSqlMigrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.1")
+                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("TMS.Domain.Core.Events.StoredEvent", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .ValueGeneratedOnAdd();
 
-                    b.Property<Guid>("AggregateId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<Guid>("AggregateId");
 
-                    b.Property<string>("Data")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Data");
 
                     b.Property<string>("MessageType")
                         .HasColumnName("Action")
                         .HasColumnType("varchar(100)");
 
                     b.Property<DateTime>("Timestamp")
-                        .HasColumnName("CreationDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnName("CreationDate");
 
                     b.HasKey("Id");
 

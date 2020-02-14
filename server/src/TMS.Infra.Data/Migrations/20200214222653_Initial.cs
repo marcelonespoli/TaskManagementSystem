@@ -41,7 +41,7 @@ namespace TMS.Infra.Data.Migrations
                         column: x => x.TaskId,
                         principalTable: "Tasks",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
