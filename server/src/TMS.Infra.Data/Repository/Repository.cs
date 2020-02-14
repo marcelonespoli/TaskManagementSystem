@@ -9,7 +9,7 @@ using TMS.Infra.Data.Context;
 
 namespace TMS.Infra.Data.Repository
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity<TEntity>
+    public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity<TEntity>
     {
         protected TaskContext Db;
         protected DbSet<TEntity> DbSet;
