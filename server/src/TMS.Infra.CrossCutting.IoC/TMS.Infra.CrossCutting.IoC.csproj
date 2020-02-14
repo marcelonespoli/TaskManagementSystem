@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TMS.Application\TMS.Application.csproj" />
+    <ProjectReference Include="..\TMS.Domain\TMS.Domain.csproj" />
+    <ProjectReference Include="..\TMS.Infra.Data\TMS.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>
