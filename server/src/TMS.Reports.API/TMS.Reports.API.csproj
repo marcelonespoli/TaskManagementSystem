@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TMS.Application\TMS.Application.csproj" />
+    <ProjectReference Include="..\TMS.Infra.CrossCutting.AspNetFilters\TMS.Infra.CrossCutting.AspNetFilters.csproj" />
     <ProjectReference Include="..\TMS.Infra.CrossCutting.IoC\TMS.Infra.CrossCutting.IoC.csproj" />
   </ItemGroup>
 

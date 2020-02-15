@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using TMS.Infra.CrossCutting.AspNetFilters;
 using TMS.Infra.CrossCutting.IoC;
 using TMS.Service.Api.Configurations;
 
@@ -28,6 +29,7 @@ namespace TMS.Service.Api
             services.AddMvc(options =>
             {
                 options.OutputFormatters.Remove(new XmlDataContractSerializerOutputFormatter());
+                options.Filters.Add(typeof(GlobalExceptionHandlingFilter));
             })
             .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 

@@ -8,6 +8,7 @@ using TMS.Domain.Interfaces;
 using TMS.Domain.Tasks.Commands;
 using TMS.Domain.Tasks.Events;
 using TMS.Domain.Tasks.Repository;
+using TMS.Infra.CrossCutting.AspNetFilters;
 using TMS.Infra.Data.Context;
 using TMS.Infra.Data.EventSourcing;
 using TMS.Infra.Data.Repository;
@@ -53,6 +54,9 @@ namespace TMS.Infra.CrossCutting.IoC
             services.AddScoped<IEventStoreRepository, EventStoreRepository>();
             services.AddScoped<IEventStore, SqlEventStore>();
             services.AddScoped<EventStoreSqlContext>();
+
+            // Infra - Filtros
+            services.AddScoped<GlobalExceptionHandlingFilter>();
         }
     }
 }
