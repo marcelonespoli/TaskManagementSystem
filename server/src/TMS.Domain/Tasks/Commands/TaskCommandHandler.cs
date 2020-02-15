@@ -69,15 +69,14 @@ namespace TMS.Domain.Tasks.Commands
 
         public Task<bool> Handle(UpdateTaskCommand message, CancellationToken cancellationToken)
         {
-            var state = message.State;
             var messageSubtasks = _taskRepository.GetSubtasksByTaskId(message.Id);  
             if (messageSubtasks.Any())
             {
-                state = GetTaskStateBasedOnSubtasks(messageSubtasks);
+                message.State = GetTaskStateBasedOnSubtasks(messageSubtasks);
             }
 
             var task = new TaskData(message.Id, message.Name, message.Description,
-                message.StartDate, message.FinishDate, state);
+                message.StartDate, message.FinishDate, message.State);
 
             if (!IsTaskValid(task))
                 return Task.FromResult(false);            

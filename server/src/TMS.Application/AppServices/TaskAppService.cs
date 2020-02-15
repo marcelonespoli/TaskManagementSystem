@@ -37,7 +37,7 @@ namespace TMS.Application.AppServices
             return _mapper.Map<TaskViewModel>(task);
         }
 
-        public CreateTaskCommand CreateTask(TaskViewModel taskViewModel)
+        public CreateTaskCommand CreateTask(CreateTaskViewModel taskViewModel)
         {
             var task = _mapper.Map<CreateTaskCommand>(taskViewModel);
 
@@ -46,7 +46,7 @@ namespace TMS.Application.AppServices
             return task;
         }
 
-        public UpdateTaskCommand UpdateTask(TaskViewModel taskViewModel)
+        public UpdateTaskCommand UpdateTask(UpdateTaskViewModel taskViewModel)
         {
             var task = _mapper.Map<UpdateTaskCommand>(taskViewModel);
 
@@ -71,13 +71,13 @@ namespace TMS.Application.AppServices
             return _mapper.Map<SubtaskViewModel>(subtask);
         }
 
-        public IEnumerable<TaskViewModel> GetSubtasksByTaskId(Guid taskId)
+        public IEnumerable<SubtaskViewModel> GetSubtasksByTaskId(Guid taskId)
         {
             var subtasks = _taskRepository.GetSubtasksByTaskId(taskId);
-            return _mapper.Map<IEnumerable<TaskViewModel>>(subtasks);
+            return _mapper.Map<IEnumerable<SubtaskViewModel>>(subtasks);
         }
 
-        public AddSubtaskCommand AddSubtask(SubtaskViewModel subtaskViewModel)
+        public AddSubtaskCommand AddSubtask(AddSubtaskViewModel subtaskViewModel)
         {
             var subtask = _mapper.Map<AddSubtaskCommand>(subtaskViewModel);
             _mediatorHandler.SendCommand(subtask);

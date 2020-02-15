@@ -37,27 +37,27 @@ namespace TMS.Service.Api.Controllers
 
         [HttpGet]
         [Route("tasks/subtasks/{taskId:guid}")]
-        public IEnumerable<TaskViewModel> GetSubtasksForTask(Guid taskId)
+        public IEnumerable<SubtaskViewModel> GetSubtasksForTask(Guid taskId)
         {
             return _taskAppService.GetSubtasksByTaskId(taskId);
         }        
 
         [HttpPost]
         [Route("tasks")]
-        public IActionResult Post([FromBody] TaskViewModel taskViewModel)
+        public IActionResult Post([FromBody] CreateTaskViewModel taskViewModel)
         {
             if (!IsModelStateValid())
             {
                 return Response();
             }
 
-            var taskCommand = _taskAppService.CreateTask(taskViewModel);
+            var taskCommand = _taskAppService.CreateTask(taskViewModel);    
             return Response(taskCommand);
         }
 
         [HttpPut]
         [Route("tasks")]
-        public IActionResult Put([FromBody] TaskViewModel taskViewModel)
+        public IActionResult Put([FromBody] UpdateTaskViewModel taskViewModel)
         {
             if (!IsModelStateValid())
             {

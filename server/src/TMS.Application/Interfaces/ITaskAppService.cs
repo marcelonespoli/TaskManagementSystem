@@ -9,12 +9,12 @@ namespace TMS.Application.Interfaces
     {
         IEnumerable<TaskViewModel> GetAll();
         TaskViewModel GetById(Guid id);         
-        CreateTaskCommand CreateTask(TaskViewModel taskViewModel);
-        UpdateTaskCommand UpdateTask(TaskViewModel taskViewModel);
+        CreateTaskCommand CreateTask(CreateTaskViewModel taskViewModel);
+        UpdateTaskCommand UpdateTask(UpdateTaskViewModel taskViewModel);
         ExcludeTaskCommand DeleteTask(Guid id);
         SubtaskViewModel GetSubtaskById(Guid id);
-        IEnumerable<TaskViewModel> GetSubtasksByTaskId(Guid taskId);
-        AddSubtaskCommand AddSubtask(SubtaskViewModel subtaskViewModel);
+        IEnumerable<SubtaskViewModel> GetSubtasksByTaskId(Guid taskId);
+        AddSubtaskCommand AddSubtask(AddSubtaskViewModel subtaskViewModel);
         UpdateSubtaskCommand UpdateSubtask(SubtaskViewModel subtaskViewModel);
         ExcludeSubtaskCommand DeleteSubtask(Guid id);
     }

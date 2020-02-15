@@ -7,11 +7,9 @@ namespace TMS.Domain.Tasks.Commands
     {
         public ICollection<AddSubtaskCommand> Subtasks { get; private set; }
 
-        public CreateTaskCommand(string name, string description, DateTime? startDate, DateTime? finishDate, 
+        public CreateTaskCommand(Guid id, string name, string description, DateTime? startDate, DateTime? finishDate, 
             ICollection<AddSubtaskCommand> subtasks)
         {
-            var id = Guid.NewGuid();
-
             Id = id;
             Name = name;
             Description = description;

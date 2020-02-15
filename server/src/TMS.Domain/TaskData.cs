@@ -41,7 +41,8 @@ namespace TMS.Domain
                 .Length(2, 200).WithMessage(ValidationMessagesTaskData.Error_Name_Length);
 
             RuleFor(r => r.StartDate)
-                .LessThan(r => r.FinishDate).WithMessage(ValidationMessagesTaskData.Error_StartDate_LessThan);
+                .LessThan(r => r.FinishDate).When(x => x.FinishDate != null)
+                .WithMessage(ValidationMessagesTaskData.Error_StartDate_LessThan);
 
             RuleFor(r => r.FinishDate)
                 .Null().When(r => r.StartDate == null).WithMessage(ValidationMessagesTaskData.Error_FinishDate_Null)

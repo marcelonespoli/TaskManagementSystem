@@ -10,6 +10,6 @@ namespace TMS.Domain.Tasks.Commands
         public string Description { get; protected set; }
         public DateTime? StartDate { get; protected set; }
         public DateTime? FinishDate { get; protected set; }
-        public States State { get; protected set; }        
+        public States State { get; set; }        
     }
 }

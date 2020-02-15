@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using System.Linq;
 using TMS.Application.ViewModels;
 using TMS.Domain.Tasks.Commands;
 
@@ -9,16 +8,10 @@ namespace TMS.Application.AutoMapper
     {
         public ViewModelToDomainMappingProfile()
         {
-            CreateMap<TaskViewModel, CreateTaskCommand>()
-                .ConstructUsing(c => new CreateTaskCommand(
-                    c.Name,
-                    c.Description,
-                    c.StartDate,
-                    c.FinishDate,
-                    c.Subtasks.Select(s => new AddSubtaskCommand(s.Name, s.Description, s.TaskId)).ToList()
-                ));
+            CreateMap<CreateTaskViewModel, CreateTaskCommand>()
+                .ConvertUsing<CreateTaskViewModelToCreateTaskCommand>();
 
-            CreateMap<TaskViewModel, UpdateTaskCommand>()
+            CreateMap<UpdateTaskViewModel, UpdateTaskCommand>()
                 .ConstructUsing(c => new UpdateTaskCommand(
                     c.Id,
                     c.Name,
@@ -30,7 +23,7 @@ namespace TMS.Application.AutoMapper
             CreateMap<TaskViewModel, ExcludeTaskCommand>()
                 .ConstructUsing(c => new ExcludeTaskCommand(c.Id));
 
-            CreateMap<SubtaskViewModel, AddSubtaskCommand>()
+            CreateMap<AddSubtaskViewModel, AddSubtaskCommand>()
                 .ConstructUsing(c => new AddSubtaskCommand(
                     c.Name,
                     c.Description,

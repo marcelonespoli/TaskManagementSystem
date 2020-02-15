@@ -29,7 +29,7 @@ namespace TMS.Service.Api.Controllers
 
         [HttpPost]
         [Route("subtasks")]
-        public IActionResult Post([FromBody] SubtaskViewModel subtaskViewModel)
+        public IActionResult Post([FromBody] AddSubtaskViewModel subtaskViewModel)
         {
             if (!IsModelStateValid())
             {
