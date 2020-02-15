@@ -9,6 +9,8 @@ using TMS.Domain.Interfaces;
 
 namespace TMS.Service.Api.Controllers
 {
+    [Route("v1")]
+    [ApiController]
     public class TasksController : BaseController
     {
         private readonly ITaskAppService _taskAppService;

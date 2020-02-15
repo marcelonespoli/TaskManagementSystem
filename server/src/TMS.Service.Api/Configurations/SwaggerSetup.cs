@@ -2,9 +2,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace TMS.Service.Api.Configurations
 {
@@ -17,8 +14,8 @@ namespace TMS.Service.Api.Configurations
                 s.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "Task Management",
-                    Description = "Task Management System"
+                    Title = "Task Management System",
+                    Description = "The endpoint to manager the data of the tasks and subtasks"
                 });
 
             });
