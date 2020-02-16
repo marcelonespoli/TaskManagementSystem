@@ -21,7 +21,7 @@ namespace TMS.Application.AppServices
             _taskRepository = taskRepository;
         }
 
-        public IEnumerable<TaskViewModel> GetCompleteTasks()
+        public IEnumerable<TaskViewModel> GetCompletedTasks()
         {
             var tasks = _taskRepository.Search(x => x.State == (int)States.Completed);
             return _mapper.Map<List<TaskViewModel>>(tasks);

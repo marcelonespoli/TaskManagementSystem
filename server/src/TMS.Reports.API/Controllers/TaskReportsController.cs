@@ -18,9 +18,9 @@ namespace TMS.Reports.API.Controllers
 
         [HttpGet]
         [Route("completed-tasks")]
-        public IEnumerable<TaskViewModel> GetCompleteTasks()
+        public IEnumerable<TaskViewModel> GetCompletedTasks()
         {
-            return _reportAppService.GetCompleteTasks();
+            return _reportAppService.GetCompletedTasks();
         }
 
     }

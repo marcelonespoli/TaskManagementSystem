@@ -5,6 +5,6 @@ namespace TMS.Application.Interfaces
 {
     public interface IReportAppService
     {
-        IEnumerable<TaskViewModel> GetCompleteTasks();
+        IEnumerable<TaskViewModel> GetCompletedTasks();
     }
 }
