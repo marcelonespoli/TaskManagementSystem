@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+using System;
 using TMS.Application.Interfaces;
-using TMS.Application.ViewModels;
 
 namespace TMS.Reports.API.Controllers
 {
@@ -18,9 +17,16 @@ namespace TMS.Reports.API.Controllers
 
         [HttpGet]
         [Route("completed-tasks")]
-        public IEnumerable<TaskViewModel> GetCompletedTasks()
+        public IActionResult GetCompletedTasks()
         {
             return _reportAppService.GetCompletedTasks();
+        }
+        
+        [HttpGet]
+        [Route("in-progress-tasks")]
+        public IActionResult GetInProgressTasksByDate(DateTime? forDate)
+        {
+            return _reportAppService.GetInProgressTasksByDate(forDate);
         }
 
     }

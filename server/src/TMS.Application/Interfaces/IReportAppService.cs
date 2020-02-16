@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
-using TMS.Application.ViewModels;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace TMS.Application.Interfaces
 {
     public interface IReportAppService
     {
-        IEnumerable<TaskViewModel> GetCompletedTasks();
+        FileStreamResult GetCompletedTasks();
+        FileStreamResult GetInProgressTasksByDate(DateTime? date);
     }
 }
