@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Moq" Version="4.13.1" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\TMS.Application\TMS.Application.csproj" />
+    <ProjectReference Include="..\..\src\TMS.Domain\TMS.Domain.csproj" />
+    <ProjectReference Include="..\..\src\TMS.Infra.CrossCutting.AspNetFilters\TMS.Infra.CrossCutting.AspNetFilters.csproj" />
+    <ProjectReference Include="..\..\src\TMS.Infra.CrossCutting.IoC\TMS.Infra.CrossCutting.IoC.csproj" />
+    <ProjectReference Include="..\..\src\TMS.Reports.API\TMS.Reports.API.csproj" />
+    <ProjectReference Include="..\..\src\TMS.Service.Api\TMS.Service.Api.csproj" />
+  </ItemGroup>
+
+</Project>

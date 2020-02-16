@@ -31,6 +31,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMS.Reports.API", "src\TMS.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMS.Infra.CrossCutting.AspNetFilters", "src\TMS.Infra.CrossCutting.AspNetFilters\TMS.Infra.CrossCutting.AspNetFilters.csproj", "{FB3A747D-74E0-421C-AF0E-C077E76AB0A3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{BBE1246F-78F4-4B36-8104-4028895047AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMS.Tests.API", "tests\TMS.Tests.API\TMS.Tests.API.csproj", "{36DADF8D-8427-4EFF-B0AB-407AB0960998}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,10 @@ Global
 		{FB3A747D-74E0-421C-AF0E-C077E76AB0A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB3A747D-74E0-421C-AF0E-C077E76AB0A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB3A747D-74E0-421C-AF0E-C077E76AB0A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36DADF8D-8427-4EFF-B0AB-407AB0960998}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36DADF8D-8427-4EFF-B0AB-407AB0960998}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36DADF8D-8427-4EFF-B0AB-407AB0960998}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36DADF8D-8427-4EFF-B0AB-407AB0960998}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +92,7 @@ Global
 		{796A308E-6C3E-4E37-926A-EFA6D20CAF48} = {A5A8AACD-FFD1-4E22-B34F-8792E164A212}
 		{B6190264-5379-499E-8F0C-D68E50FF8EA9} = {80F5195F-5366-4995-90E3-1BB58C57F7EE}
 		{FB3A747D-74E0-421C-AF0E-C077E76AB0A3} = {A5A8AACD-FFD1-4E22-B34F-8792E164A212}
+		{36DADF8D-8427-4EFF-B0AB-407AB0960998} = {BBE1246F-78F4-4B36-8104-4028895047AB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6EC7B69C-2B60-4DCE-AFFE-C4CE3E3CCC1E}
